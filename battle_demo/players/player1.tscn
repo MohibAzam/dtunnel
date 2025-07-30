@@ -1,0 +1,127 @@
+[gd_scene load_steps=18 format=3 uid="uid://bw7d1t7ddvmt6"]
+
+[ext_resource type="Script" uid="uid://cesafl0caxl62" path="res://battle_demo/players/player_1.gd" id="1_3hvd8"]
+[ext_resource type="Texture2D" uid="uid://su37o8toex63" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/0-sprite/S508P17.png" id="1_v6p3t"]
+[ext_resource type="Texture2D" uid="uid://bt0mocgjnsklg" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/0-sprite/S508P19.png" id="2_ucj4n"]
+[ext_resource type="Texture2D" uid="uid://c1oj4x18qkadq" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/0-sprite/S508P01.png" id="3_6sth8"]
+[ext_resource type="Texture2D" uid="uid://dsukhxv7vqxwr" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/0-sprite/S508P03.png" id="4_0qif6"]
+[ext_resource type="Texture2D" uid="uid://duss4p45fhuw8" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/0-sprite/S508P05.png" id="5_iivgl"]
+[ext_resource type="Texture2D" uid="uid://byf4lr6mqwc26" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/0-sprite/S508P09.png" id="6_h88xx"]
+[ext_resource type="Texture2D" uid="uid://b75jwbylgn1uo" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/0-sprite/S508P07.png" id="7_coaho"]
+[ext_resource type="Texture2D" uid="uid://dyulu0yoltefh" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/1-sword/S509P17.png" id="8_5c0xk"]
+[ext_resource type="Texture2D" uid="uid://c3x7nuexy1pkj" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/1-sword/S509P19.png" id="9_bte3n"]
+[ext_resource type="Texture2D" uid="uid://qanmrt6ajcy8" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/1-sword/S509P01.png" id="10_hmvls"]
+[ext_resource type="Texture2D" uid="uid://cxgjwpvmt5vw8" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/1-sword/S509P03.png" id="11_ibyf1"]
+[ext_resource type="Texture2D" uid="uid://crxeuoj01errx" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/1-sword/S509P05.png" id="12_d7imu"]
+[ext_resource type="Texture2D" uid="uid://dwcc1gtefg1fm" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/1-sword/S509P09.png" id="13_3tq3m"]
+[ext_resource type="Texture2D" uid="uid://ca3k2rrjunt34" path="res://battle_demo/assets/Game Boy Advance - Golden Sun 2 The Lost Age - Felix/1-sword/S509P07.png" id="14_8j5im"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46pn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v6p3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ucj4n")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6sth8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0qif6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iivgl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_h88xx")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_coaho")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wlg7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5c0xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bte3n")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hmvls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ibyf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d7imu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_3tq3m")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_8j5im")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[node name="Player1" type="Node2D"]
+script = ExtResource("1_3hvd8")
+
+[node name="CombinedSprite" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 218.667
+offset_top = 117.0
+offset_right = 258.667
+offset_bottom = 157.0
+
+[node name="CharPiece" type="AnimatedSprite2D" parent="CombinedSprite"]
+sprite_frames = SubResource("SpriteFrames_46pn5")
+animation = &"attack"
+frame_progress = 0.0910638
+flip_h = true
+
+[node name="WeaponPiece" type="AnimatedSprite2D" parent="CombinedSprite"]
+sprite_frames = SubResource("SpriteFrames_1wlg7")
+animation = &"attack"
+flip_h = true

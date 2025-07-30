@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://57igmul5g3oa"]
+
+[ext_resource type="Script" uid="uid://cvyc0rtw887" path="res://battle_demo/players/meter.gd" id="1_tye56"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w567b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0qb0"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.937255, 0.937255, 0.937255, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qj5os"]
+bg_color = Color(0, 1, 1, 1)
+
+[node name="Meter" type="HBoxContainer"]
+script = ExtResource("1_tye56")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+alignment = 2
+
+[node name="NumberLabel" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w567b")
+
+[node name="CurrNumber" type="Label" parent="VBoxContainer/NumberLabel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Meter" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(64, 512)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p0qb0")
+
+[node name="MeterFill" type="Panel" parent="Meter"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qj5os")

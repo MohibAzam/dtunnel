@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2tgl8x25o7kk"]
+
+[ext_resource type="Script" uid="uid://dj3mq7rb6etln" path="res://battle_demo/battle_messages/battle_msg_box.gd" id="1_5djog"]
+[ext_resource type="FontFile" uid="uid://bve5l6tevu036" path="res://font/reg_font_black.png" id="2_4hcqb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7jar"]
+bg_color = Color(0.908811, 0.908811, 0.908811, 1)
+
+[node name="BattleMsgBox" type="PanelContainer"]
+custom_minimum_size = Vector2(400, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_v7jar")
+script = ExtResource("1_5djog")
+
+[node name="RenderedText" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4hcqb")
+theme_override_font_sizes/font_size = 16
+
+[node name="QueuedText" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4hcqb")
+theme_override_font_sizes/font_size = 8
+text = "testet"

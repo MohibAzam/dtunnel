@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6v32b0bmow68"]
+
+[ext_resource type="FontFile" uid="uid://bve5l6tevu036" path="res://font/reg_font_black.png" id="1_df7vi"]
+[ext_resource type="FontFile" uid="uid://dov1knyk0fxlo" path="res://font/fancy_font_black.png" id="2_rxc5a"]
+
+[node name="DisplaySettings" type="VBoxContainer"]
+offset_right = 485.0
+offset_bottom = 128.0
+
+[node name="DisplayMode" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="DisplayModeTitle" type="Label" parent="DisplayMode"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rxc5a")
+text = "DISPLAY/MODE"
+
+[node name="MainResolution" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MainResolution"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rxc5a")
+text = "MAIN/RESOLUTION"
+
+[node name="Label" type="Label" parent="MainResolution"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_df7vi")
+theme_override_font_sizes/font_size = 8
+text = "Please note: Devil Tunnel's base resolution is 540x360 (3:2)"
+autowrap_mode = 3
+
+[node name="WideResolution" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="WideResolution"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rxc5a")
+text = "WIDE/SHOT/RESOLUTION"
+
+[node name="Label2" type="Label" parent="WideResolution"]
+custom_minimum_size = Vector2(520, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_df7vi")
+theme_override_font_sizes/font_size = 8
+text = "There are certain scenes where Devil Tunnel's width will expand to match that of your computer. Please select an appropriate resolution for these scenes"
+autowrap_mode = 3

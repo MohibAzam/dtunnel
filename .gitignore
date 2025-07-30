@@ -1,0 +1,10 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+.battle_demo/assets/
+.font/
+*.png
+*.gif
+*.import
+*.ttf
+*.txt

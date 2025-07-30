@@ -1,0 +1,98 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhpp14b1v7552"]
+
+[sub_resource type="GDScript" id="GDScript_tt2lq"]
+script/source = "extends Control
+
+\"\"\"
+A very small bar (spawns next to an enemy) that signifies how long until the enemy is no longer stunned
+\"\"\"
+var decrement_amount = 25
+const bar_size = 64
+var curr_bar_amnt
+
+enum {GREEN, YELLOW, RED}
+const colors = [Color.WEB_GREEN, Color.GOLD, Color.DARK_RED]
+var curr_color = GREEN
+
+signal stun_over
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void: curr_bar_amnt = 1000
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	
+	# Set the bar's size
+	var fill_size = int(curr_bar_amnt * bar_size / 1000)
+	%Fill.size.y = max(fill_size, 0)
+	
+	# If bar is empty, exit
+	if curr_bar_amnt < 0: stun_over.emit()
+	
+	# Update the bar's color
+	if fill_size > 32 and not(curr_color == GREEN): 
+		curr_color = GREEN
+		_set_bar_color(colors[GREEN])
+	elif fill_size <= 32 and fill_size > 16 and not(curr_color == YELLOW): 
+		curr_color = YELLOW
+		_set_bar_color(colors[YELLOW])
+	elif fill_size <= 16 and not(curr_color == RED):
+		curr_color = RED
+		_set_bar_color(colors[RED])
+		
+	# Decrease the bar amount as needed
+	decrement_bar(decrement_amount)
+	
+
+func _set_bar_color(color_to_use):
+	var style = StyleBoxFlat.new()
+	style.set_bg_color(color_to_use)
+	%Fill.set(\"theme_override_styles/panel\", style)	
+	
+func decrement_bar(dec_amnt): curr_bar_amnt -= dec_amnt
+func set_decrement_amount(new_amnt): decrement_amount = new_amnt
+func reset_bar(): curr_bar_amnt = 1000
+func set_bar(new_setting): curr_bar_amnt = new_setting
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3dv7"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13u6p"]
+bg_color = Color(0, 0.501961, 0, 1)
+
+[node name="StunBar" type="Control"]
+custom_minimum_size = Vector2(16, 66)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 116.0
+offset_bottom = 164.0
+rotation = -3.14159
+script = SubResource("GDScript_tt2lq")
+
+[node name="BackPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(16, 66)
+layout_mode = 2
+offset_right = 16.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3dv7")
+
+[node name="Fill" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 15.0
+offset_bottom = 65.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_13u6p")

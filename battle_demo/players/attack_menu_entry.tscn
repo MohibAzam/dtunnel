@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnvfwjrm55y6q"]
+
+[ext_resource type="FontFile" uid="uid://dcai6hofws206" path="res://font/msg_large_1.png" id="1_bnchi"]
+
+[sub_resource type="GDScript" id="GDScript_8ukqy"]
+script/source = "extends PanelContainer
+
+var clickable = false
+signal clicked(entry)
+
+var attack_name
+var meter_num
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func set_attack_name(in_attack): attack_name = in_attack
+func set_meter_amount(in_meter): meter_num = in_meter
+"
+
+[node name="AttackMenuEntry" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_8ukqy")
+
+[node name="HBoxLeft" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AttackName" type="Label" parent="HBoxLeft"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.957718, 0.957718, 0.957718, 1)
+theme_override_fonts/font = ExtResource("1_bnchi")
+
+[node name="HBoxRight" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MeterNum" type="Label" parent="HBoxRight"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MP" type="Label" parent="HBoxRight"]
+unique_name_in_owner = true
+layout_mode = 2

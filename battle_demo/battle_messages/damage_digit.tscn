@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ssvelmdhr0i"]
+
+[ext_resource type="Shader" uid="uid://bxro6gmpe283a" path="res://battle_demo/shaders/red_digit.gdshader" id="1_7ibhq"]
+[ext_resource type="FontFile" uid="uid://ckaqdfirkfbcs" path="res://font/damage_numbers_black.png" id="1_votpi"]
+[ext_resource type="Script" uid="uid://krvsuds5i7y2" path="res://battle_demo/battle_messages/damage_digit.gd" id="3_jevvo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5kyl"]
+shader = ExtResource("1_7ibhq")
+
+[node name="DamageDigit" type="Label"]
+material = SubResource("ShaderMaterial_v5kyl")
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_votpi")
+script = ExtResource("3_jevvo")

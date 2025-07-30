@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://l0trl1lfv5fh"]
+
+[sub_resource type="GDScript" id="GDScript_tkq4v"]
+script/source = "extends PanelContainer
+
+\"\"\"
+This contains the current of one of the player characters.
+\"\"\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="HealthViewer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_tkq4v")

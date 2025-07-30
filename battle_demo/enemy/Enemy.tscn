@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://daiidx6orbu6b"]
+
+[ext_resource type="Script" uid="uid://b4huhqmxexka5" path="res://battle_demo/enemy/Enemy.gd" id="1_p0ub4"]
+[ext_resource type="Texture2D" uid="uid://cxaosswdchx6y" path="res://battle_demo/assets/image-removebg-preview.png" id="2_ku7hl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nhnx"]
+atlas = ExtResource("2_ku7hl")
+region = Rect2(4, 426, 84, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsydv"]
+atlas = ExtResource("2_ku7hl")
+region = Rect2(90, 426, 84, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1bu5"]
+atlas = ExtResource("2_ku7hl")
+region = Rect2(177, 424, 84, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvt5k"]
+atlas = ExtResource("2_ku7hl")
+region = Rect2(268, 424, 84, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vckiw"]
+atlas = ExtResource("2_ku7hl")
+region = Rect2(6, 320, 84, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_400yo"]
+atlas = ExtResource("2_ku7hl")
+region = Rect2(94, 320, 84, 104)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxiu8"]
+atlas = ExtResource("2_ku7hl")
+region = Rect2(185, 320, 84, 104)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yr1xj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nhnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsydv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1bu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvt5k")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vckiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_400yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxiu8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsydv")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_p0ub4")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+position = Vector2(179.333, 36.3333)
+sprite_frames = SubResource("SpriteFrames_yr1xj")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://chu4qpg6f4aaq"]
+
+[ext_resource type="Script" uid="uid://diaqgwedlkmn4" path="res://battle_demo/main.gd" id="1_3sby4"]
+[ext_resource type="PackedScene" uid="uid://cmwni348dni30" path="res://battle_demo/arena_layout/BattleField.tscn" id="1_n7uo7"]
+[ext_resource type="PackedScene" uid="uid://bw7d1t7ddvmt6" path="res://battle_demo/players/player1.tscn" id="2_qvv3i"]
+[ext_resource type="PackedScene" uid="uid://d2fa3gdd3tcra" path="res://battle_demo/players/player2.tscn" id="3_kkkuw"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3sby4")
+
+[node name="Battlefield" parent="." instance=ExtResource("1_n7uo7")]
+
+[node name="Player1" parent="." instance=ExtResource("2_qvv3i")]
+position = Vector2(-99, 146)
+
+[node name="Player2" parent="." instance=ExtResource("3_kkkuw")]
+position = Vector2(195, 139)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc2bq6pikp3ti"]
+
+[ext_resource type="Script" uid="uid://ub8www360cq4" path="res://battle_demo/battle_messages/damage_exclaim.gd" id="1_afrgk"]
+[ext_resource type="FontFile" uid="uid://dov1knyk0fxlo" path="res://font/fancy_font_black.png" id="2_3o132"]
+
+[node name="DamageExclaim" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_afrgk")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3o132")
+text = "COUNTER%"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsyfc3g756koy"]
+
+[ext_resource type="Script" uid="uid://16xv8dhno6vr" path="res://status_menu/stat_adjust.gd" id="1_nxpto"]
+
+[node name="StatAdjust" type="Node2D"]
+script = ExtResource("1_nxpto")

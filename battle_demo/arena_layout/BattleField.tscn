@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmwni348dni30"]
+
+[ext_resource type="PackedScene" uid="uid://djmirmy4w24dn" path="res://battle_demo/arena_layout/BattleSpace.tscn" id="1_h21xa"]
+[ext_resource type="Script" uid="uid://cylxffdnc6lbn" path="res://battle_demo/arena_layout/battle_field.gd" id="1_rx3a7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q33pp"]
+
+[node name="Battlefield" type="CenterContainer"]
+custom_minimum_size = Vector2(540, 0)
+offset_top = 300.0
+offset_right = 540.0
+offset_bottom = 331.0
+script = ExtResource("1_rx3a7")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="P1Spaces" type="HBoxContainer" parent="HBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BattleSpace1" parent="HBox/P1Spaces" instance=ExtResource("1_h21xa")]
+layout_mode = 2
+
+[node name="BattleSpace2" parent="HBox/P1Spaces" instance=ExtResource("1_h21xa")]
+layout_mode = 2
+
+[node name="BattleSpace3" parent="HBox/P1Spaces" instance=ExtResource("1_h21xa")]
+layout_mode = 2
+
+[node name="Separator" type="VSeparator" parent="HBox"]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_q33pp")
+
+[node name="P2Spaces" type="HBoxContainer" parent="HBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BattleSpace1" parent="HBox/P2Spaces" instance=ExtResource("1_h21xa")]
+layout_mode = 2
+
+[node name="BattleSpace2" parent="HBox/P2Spaces" instance=ExtResource("1_h21xa")]
+layout_mode = 2
+
+[node name="BattleSpace3" parent="HBox/P2Spaces" instance=ExtResource("1_h21xa")]
+layout_mode = 2

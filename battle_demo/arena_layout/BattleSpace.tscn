@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://djmirmy4w24dn"]
+
+[ext_resource type="Script" uid="uid://olst6s22s88d" path="res://battle_demo/arena_layout/battle_space.gd" id="1_um3xx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26hga"]
+bg_color = Color(0.130921, 0.674639, 0.73603, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="BattleSpace" type="Panel"]
+custom_minimum_size = Vector2(80, 31)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -15.5
+offset_right = 40.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_26hga")
+script = ExtResource("1_um3xx")

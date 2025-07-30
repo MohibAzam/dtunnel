@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://djejr83vq6qic"]
+
+[ext_resource type="Script" uid="uid://pidl5lamxbc7" path="res://battle_demo/battle_messages/damage_num.gd" id="1_j6ega"]
+
+[node name="DamageNum" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 204.0
+offset_right = -1720.0
+offset_bottom = -876.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_j6ega")
