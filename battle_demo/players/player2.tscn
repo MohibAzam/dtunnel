@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -71,7 +71,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -110,13 +110,15 @@ script = ExtResource("1_1gsbv")
 [node name="CombinedSprite" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 218.667
-offset_top = 117.0
-offset_right = 258.667
-offset_bottom = 157.0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="CharPiece" type="AnimatedSprite2D" parent="CombinedSprite"]
 sprite_frames = SubResource("SpriteFrames_wcwjt")
+animation = &"attack"
+frame_progress = 0.33977
 
 [node name="WeaponPiece" type="AnimatedSprite2D" parent="CombinedSprite"]
 sprite_frames = SubResource("SpriteFrames_w70v3")
+animation = &"attack"
+frame_progress = 0.0451393

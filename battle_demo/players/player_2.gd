@@ -18,6 +18,8 @@ var visible_hp
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$CombinedSprite/CharPiece.play("default")
+	$CombinedSprite/WeaponPiece.play("default")
 	pass # Replace with function body.
 
 

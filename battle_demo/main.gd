@@ -1,6 +1,7 @@
 extends Node2D
 
 # TODO: Use 0 indices for the player and panel numbers!
+# TODO: (9/4) Add a button to declare an attack!
 
 var _players_hidden = true
 
@@ -21,10 +22,10 @@ func _ready() -> void:
 func show_players():
 	player_1_posn = $Battlefield.get_panel_posn(1, 2)
 	player_2_posn = $Battlefield.get_panel_posn(2, 2)
-	$Player1.global_position.x = -player_1_posn[0]
-	$Player1.global_position.y = 100 # player_1_posn[1] - 5  
-	$Player2.global_position.x = player_1_posn[0]
-	$Player2.global_position.y = 100 # player_2_posn[1] - 5  
+	$Player1.global_position.x = player_1_posn[0]
+	$Player1.global_position.y = player_1_posn[1] - 32
+	$Player2.global_position.x = player_2_posn[0]
+	$Player2.global_position.y = player_2_posn[1] - 32
 	player_tiles = [2, 2]
 	$Player1.show()
 	$Player2.show()
@@ -48,14 +49,18 @@ func move_player(direction, player_num) -> bool:
 	# If it's possible, move the player off the current tile...
 	# First get the status / attack on the current tile to see 
 	# if there's anything special we need to do...
+	# TODO
 	
 	# Next, let the original tile know we're exiting
-	# ...and then move the player onto the next tile!
+	# ...and then move the player onto the next tile!	
 	$Battlefield.move_player_to_posn(player_tiles[player_num - 1], proposed_posn, player_num)
+	player_tiles[player_num - 1] = proposed_posn
 	var player_node = get_node("Player" + str(player_num))
 	player_node.curr_posn = proposed_posn
-	$Player1.position.x = player_1_posn[0]
-	$Player1.position.y = player_1_posn[1] - 5  
+	print(proposed_posn)
+	var new_player_posn = $Battlefield.get_panel_posn(player_num, proposed_posn)
+	player_node.global_position.x = new_player_posn[0]
+	player_node.global_position.y = new_player_posn[1] - 32
 	return true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
