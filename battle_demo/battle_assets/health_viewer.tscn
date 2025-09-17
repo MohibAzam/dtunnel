@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://l0trl1lfv5fh"]
 
 [sub_resource type="GDScript" id="GDScript_tkq4v"]
-script/source = "extends PanelContainer
+script/source = "extends HBoxContainer
 
 \"\"\"
 This contains the current of one of the player characters.
@@ -11,16 +11,43 @@ This contains the current of one of the player characters.
 func _ready() -> void:
 	pass # Replace with function body.
 
+func adjust_name(given_name: String) -> void:
+	$PlayerName.text = given_name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 "
 
-[node name="HealthViewer" type="PanelContainer"]
+[node name="HealthViewer" type="HBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -344.0
+offset_bottom = -321.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_tkq4v")
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(72, 12)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "100/100"
+horizontal_alignment = 2
+vertical_alignment = 1

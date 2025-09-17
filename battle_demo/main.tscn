@@ -1,17 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://chu4qpg6f4aaq"]
+[gd_scene load_steps=7 format=3 uid="uid://chu4qpg6f4aaq"]
 
 [ext_resource type="Script" uid="uid://diaqgwedlkmn4" path="res://battle_demo/main.gd" id="1_3sby4"]
 [ext_resource type="PackedScene" uid="uid://cmwni348dni30" path="res://battle_demo/arena_layout/BattleField.tscn" id="1_n7uo7"]
 [ext_resource type="PackedScene" uid="uid://bw7d1t7ddvmt6" path="res://battle_demo/players/player1.tscn" id="2_qvv3i"]
 [ext_resource type="PackedScene" uid="uid://d2fa3gdd3tcra" path="res://battle_demo/players/player2.tscn" id="3_kkkuw"]
+[ext_resource type="PackedScene" uid="uid://57igmul5g3oa" path="res://battle_demo/players/meter.tscn" id="5_f2e7w"]
+[ext_resource type="PackedScene" uid="uid://l0trl1lfv5fh" path="res://battle_demo/battle_assets/health_viewer.tscn" id="6_bhcug"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_3sby4")
 
 [node name="Battlefield" parent="." instance=ExtResource("1_n7uo7")]
+offset_top = 275.0
+offset_bottom = 306.0
 
 [node name="Player1" parent="." instance=ExtResource("2_qvv3i")]
 position = Vector2(-99, 146)
 
 [node name="Player2" parent="." instance=ExtResource("3_kkkuw")]
 position = Vector2(195, 139)
+
+[node name="Meter" parent="." instance=ExtResource("5_f2e7w")]
+offset_left = 28.0
+offset_top = 128.0
+offset_right = 104.0
+offset_bottom = 320.0
+
+[node name="Meter2" parent="." instance=ExtResource("5_f2e7w")]
+offset_left = 432.0
+offset_top = 128.0
+offset_right = 508.0
+offset_bottom = 320.0
+
+[node name="HealthViewer" parent="." instance=ExtResource("6_bhcug")]
+offset_left = 120.0
+offset_top = 320.0
+offset_right = 316.0
+offset_bottom = 359.0
+
+[node name="HealthViewer2" parent="." instance=ExtResource("6_bhcug")]
+offset_left = 280.0
+offset_top = 320.0
+offset_right = 476.0
+offset_bottom = 359.0

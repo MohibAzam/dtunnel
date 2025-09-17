@@ -15,6 +15,8 @@ bg_color = Color(0.937255, 0.937255, 0.937255, 1)
 bg_color = Color(0, 1, 1, 1)
 
 [node name="Meter" type="HBoxContainer"]
+offset_right = 76.0
+offset_bottom = 192.0
 script = ExtResource("1_tye56")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -22,19 +24,20 @@ layout_mode = 2
 alignment = 2
 
 [node name="NumberLabel" type="PanelContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(150, 150)
+custom_minimum_size = Vector2(44, 44)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w567b")
 
 [node name="CurrNumber" type="Label" parent="VBoxContainer/NumberLabel"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 30
+text = "9"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Meter" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(64, 512)
+custom_minimum_size = Vector2(28, 192)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p0qb0")
 

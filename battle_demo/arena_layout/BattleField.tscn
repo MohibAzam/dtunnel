@@ -30,7 +30,7 @@ layout_mode = 2
 
 [node name="Separator" type="VSeparator" parent="HBox"]
 layout_mode = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxEmpty_q33pp")
 
 [node name="P2Spaces" type="HBoxContainer" parent="HBox"]

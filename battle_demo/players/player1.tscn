@@ -24,8 +24,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_ucj4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ucj4n")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 3.0
 }, {
@@ -47,7 +50,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_h88xx")
 }],
-"loop": true,
+"loop": false,
 "name": &"down",
 "speed": 5.0
 }, {
@@ -55,7 +58,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_coaho")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
 "speed": 5.0
 }]
@@ -65,6 +68,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_5c0xk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bte3n")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_bte3n")
@@ -116,11 +122,12 @@ offset_bottom = 40.0
 [node name="CharPiece" type="AnimatedSprite2D" parent="CombinedSprite"]
 sprite_frames = SubResource("SpriteFrames_46pn5")
 animation = &"attack"
-frame_progress = 0.0250303
 flip_h = true
 
 [node name="WeaponPiece" type="AnimatedSprite2D" parent="CombinedSprite"]
 sprite_frames = SubResource("SpriteFrames_1wlg7")
 animation = &"attack"
-frame_progress = 0.748789
 flip_h = true
+
+[connection signal="attack_done" from="." to="." method="_on_attack_done"]
+[connection signal="animation_finished" from="CombinedSprite/CharPiece" to="." method="_on_char_piece_animation_finished"]
